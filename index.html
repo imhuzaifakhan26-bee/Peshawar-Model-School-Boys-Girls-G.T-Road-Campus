@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Peshawar Model School - Boys & Girls G.T. Road Campus</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #e87500;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #f58220;
+            color: #fff;
+            padding: 12px 4%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        nav button {
+            border: none;
+            background: #fff;
+            color: #e87500;
+            padding: 9px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        nav button:hover {
+            background: #fff0df;
+        }
+
+        .page {
+            display: none;
+            min-height: 70vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            min-height: 570px;
+            background-image:
+                linear-gradient(rgba(245, 130, 32, .68), rgba(245, 130, 32, .68)),
+                url("photo2.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: #fff;
+        }
+
+        .hero-content img {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            background: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            border: none;
+            background: #f58220;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #df6900;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #e87500;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .section-title p {
+            margin-top: 5px;
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .intro img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 4px solid #f58220;
+        }
+
+        .intro-text h2 {
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border: 3px solid #f58220;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 420px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-box {
+            max-width: 900px;
+            margin: auto;
+            border: 2px solid #f58220;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1/-1;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px;
+            border: 2px solid #f58220;
+            border-radius: 6px;
+            outline: none;
+            background: #fff;
+            color: #e87500;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .class-card {
+            border: 2px solid #f58220;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .class-card h3 {
+            font-size: 22px;
+        }
+
+        .applicants {
+            margin: 8px 0;
+            font-weight: bold;
+        }
+
+        .study-details {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .study-header {
+            border: 3px solid #f58220;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .subject-card {
+            border: 2px solid #f58220;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .subject-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .subject-card ul {
+            padding-left: 22px;
+        }
+
+        .test-info {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .test-header {
+            border: 3px solid #f58220;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .question {
+            border: 2px solid #f58220;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .max-marks {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .math-answer {
+            min-height: 230px;
+        }
+
+        .marks-input {
+            max-width: 180px;
+            margin-top: 10px;
+        }
+
+        .warning {
+            border: 2px solid #f58220;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .result-box {
+            max-width: 900px;
+            margin: 30px auto;
+            border: 3px solid #f58220;
+            border-radius: 12px;
+            padding: 25px;
+            display: none;
+        }
+
+        .result-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .result-box th,
+        .result-box td {
+            border: 2px solid #f58220;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .result-summary {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .rules {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .rule-box {
+            border: 2px solid #f58220;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+
+        .rule-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .rule-box ul {
+            padding-left: 25px;
+        }
+
+        .facilities {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .facility-card {
+            border: 3px solid #f58220;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 42% 58%;
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .facility-content {
+            padding: 30px;
+        }
+
+        .facility-content h3 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .facility-content p {
+            font-size: 16px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            border: 2px solid #f58220;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #f58220;
+            color: #fff;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media(max-width:900px) {
+
+            .header-inner {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .class-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-card {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-card img {
+                height: 350px;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            nav button {
+                width: 100%;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery,
+            .class-grid,
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .gallery-item img {
+                height: 350px;
+            }
+
+            .facility-card img {
+                height: 300px;
+            }
+
+            .facility-content {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-inner">
+
+            <div class="logo-area">
+
+                <img src="photo1.jpg" alt="School Logo">
+
+                <div class="logo-text">
+                    <h1>Peshawar Model School</h1>
+                    <p>Boys & Girls - G.T. Road Campus</p>
+                </div>
+
+            </div>
+
+            <nav>
+
+                <button onclick="showPage('home')">Home</button>
+
+                <button onclick="showPage('gallery')">Gallery</button>
+
+                <button onclick="showPage('admission')">Admission</button>
+
+                <button onclick="showPage('study')">
+                    Admission Test Study
+                </button>
+
+                <button onclick="showPage('test')">
+                    Admission Test
+                </button>
+
+                <button onclick="showPage('rules')">
+                    Rules & Regulations
+                </button>
+
+                <button onclick="showPage('facilities')">
+                    Facilities
+                </button>
+
+                <button onclick="showPage('contact')">
+                    Contact
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HOME -->
+
+    <section id="home" class="page active">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <img src="photo1.jpg" alt="School Logo">
+
+                <h2>Peshawar Model School</h2>
+
+                <p>
+                    Boys & Girls - G.T. Road Campus
+                </p>
+
+                <p>
+                    Quality Education, Character Building and Academic Development
+                </p>
+
+                <button class="btn btn-white" onclick="showPage('admission')">
+                    Apply for Admission
+                </button>
+
+                <button class="btn btn-white" onclick="showPage('study')">
+                    Admission Test Study
+                </button>
+
+                <button class="btn btn-white" onclick="showPage('facilities')">
+                    School Facilities
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Welcome</h2>
+
+                <p>
+                    Welcome to Peshawar Model School - Boys & Girls G.T. Road Campus
+                </p>
+
+            </div>
+
+
+            <div class="intro">
+
+                <img src="photo3.jpeg" alt="School Introduction">
+
+                <div class="intro-text">
+
+                    <h2>About Our Campus</h2>
+
+                    <p>
+                        Peshawar Model School Boys & Girls G.T. Road Campus
+                        provides an educational environment focused on learning,
+                        discipline, character building and academic development.
+                    </p>
+
+                    <p>
+                        Students are encouraged to develop knowledge, confidence,
+                        communication skills and responsible behaviour.
+                    </p>
+
+                    <button class="btn" onclick="showPage('facilities')">
+                        View Facilities
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="gallery" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>School Gallery</h2>
+
+                <p>
+                    School photographs and campus memories
+                </p>
+
+            </div>
+
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <img src="photo4.jpeg">
+                    <div class="gallery-caption">School Gallery 1</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo5.jpeg">
+                    <div class="gallery-caption">School Gallery 2</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo6.jpeg">
+                    <div class="gallery-caption">School Gallery 3</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo7.jpeg">
+                    <div class="gallery-caption">School Gallery 4</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo8.jpeg">
+                    <div class="gallery-caption">School Gallery 5</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo9.jpeg">
+                    <div class="gallery-caption">School Gallery 6</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo10.jpeg">
+                    <div class="gallery-caption">School Gallery 7</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo11.jpeg">
+                    <div class="gallery-caption">School Gallery 8</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo12.jpeg">
+                    <div class="gallery-caption">School Gallery 9</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo13.jpeg">
+                    <div class="gallery-caption">School Gallery 10</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo14.jpeg">
+                    <div class="gallery-caption">School Gallery 11</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="photo15.jpeg">
+                    <div class="gallery-caption">School Gallery 12</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMISSION -->
+
+    <section id="admission" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Admission Form</h2>
+
+                <p>
+                    Complete the form for admission information
+                </p>
+
+            </div>
+
+
+            <div class="form-box">
+
+                <form onsubmit="submitAdmission(event)">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Student Full Name</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Father / Guardian Name</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender</label>
+
+                            <select required>
+                                <option value="">Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Applying Class</label>
+
+                            <select required>
+
+                                <option value="">Select Class</option>
+                                <option>Prep</option>
+                                <option>1st</option>
+                                <option>2nd</option>
+                                <option>3rd</option>
+                                <option>4th</option>
+                                <option>5th</option>
+                                <option>6th</option>
+                                <option>7th</option>
+                                <option>8th</option>
+                                <option>9th</option>
+                                <option>10th</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Previous School</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label>WhatsApp Number</label>
+                            <input type="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email">
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Transport Required?</label>
+
+                            <select>
+                                <option>No</option>
+                                <option>Yes</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group full">
+
+                            <label>Address</label>
+
+                            <textarea></textarea>
+
+                        </div>
+
+                        <div class="form-group full">
+
+                            <label>Other Information</label>
+
+                            <textarea></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <button class="btn" type="submit">
+                        Submit Admission Information
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMISSION TEST STUDY -->
+
+    <section id="study" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Admission Test Study</h2>
+
+                <p>
+                    Select your class to see the subjects and topics
+                    to prepare for the admission test.
+                </p>
+
+            </div>
+
+            <div class="class-grid" id="classGrid"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDY DETAILS -->
+
+    <section id="studyDetails" class="page">
+
+        <div class="container">
+
+            <div class="study-details">
+
+                <div class="study-header">
+
+                    <h2 id="studyClassTitle">
+                        Admission Test Preparation
+                    </h2>
+
+                    <p id="studyApplicantText"></p>
+
+                    <p>
+                        Prepare the following subjects and topics.
+                        The admission test will be based on the preparation
+                        areas shown below.
+                    </p>
+
+                </div>
+
+                <div class="subject-grid" id="subjectGrid"></div>
+
+                <br>
+
+                <div class="warning">
+
+                    For higher classes, preparation may include
+                    advanced/class-level concepts. The exact test content
+                    should be confirmed by the school administration.
+
+                </div>
+
+                <div style="text-align:center">
+
+                    <button class="btn" onclick="startSelectedTest()">
+                        Start Admission Test
+                    </button>
+
+                    <button class="btn" onclick="showPage('study')">
+                        Back to Classes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMISSION TEST -->
+
+    <section id="test" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Admission Test</h2>
+
+                <p>
+                    Class-specific written admission assessment
+                </p>
+
+            </div>
+
+
+            <div id="studentInfoBox" class="form-box">
+
+                <h2 style="text-align:center;margin-bottom:20px">
+                    Student Information
+                </h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Student Name</label>
+
+                        <input id="studentName" type="text">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Father / Guardian Name</label>
+
+                        <input id="fatherName" type="text">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>WhatsApp Number</label>
+
+                        <input id="whatsappNumber" type="tel">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Class</label>
+
+                        <input id="testClass" type="text" readonly>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <button class="btn" onclick="beginTest()">
+                    Begin Test
+                </button>
+
+            </div>
+
+
+            <div id="testArea" class="test-info" style="display:none">
+
+                <div class="test-header">
+
+                    <h2 id="examTitle"></h2>
+
+                    <p>
+                        Written Admission Test
+                    </p>
+
+                    <p>
+                        <strong>
+                            Marks are entered manually by the examiner
+                            after checking the student's answers.
+                        </strong>
+                    </p>
+
+                </div>
+
+                <div id="questionsContainer"></div>
+
+                <div style="text-align:center">
+
+                    <button class="btn" onclick="calculateResult()">
+                        Calculate Result
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="resultBox" class="result-box">
+
+                <h2 style="text-align:center">
+                    Admission Test Result
+                </h2>
+
+                <div id="resultStudentInfo"></div>
+
+                <div id="resultTable"></div>
+
+                <div class="result-summary" id="resultSummary"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RULES & REGULATIONS -->
+
+    <section id="rules" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Rules & Regulations</h2>
+
+                <p>
+                    Important rules and regulations for students and parents
+                </p>
+
+            </div>
+
+
+            <div class="rules">
+
+                <div class="rule-box">
+
+                    <h3>1. General Discipline</h3>
+
+                    <ul>
+
+                        <li>
+                            Students must follow the instructions of teachers,
+                            school administration and authorized staff.
+                        </li>
+
+                        <li>
+                            Students are expected to maintain respectful,
+                            responsible and disciplined behaviour.
+                        </li>
+
+                        <li>
+                            Fighting, bullying, threatening behaviour,
+                            harassment or deliberately disturbing other students
+                            is not permitted.
+                        </li>
+
+                        <li>
+                            Students must respect school property, classrooms,
+                            laboratories, furniture, books and other facilities.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>2. Mobile Phones & Electronic Gadgets</h3>
+
+                    <ul>
+
+                        <li>
+                            Mobile phones are not allowed for students during
+                            school hours unless specifically authorized by the
+                            school administration.
+                        </li>
+
+                        <li>
+                            Unauthorized smart watches, tablets, gaming devices,
+                            cameras, recording devices or other electronic gadgets
+                            are also not permitted.
+                        </li>
+
+                        <li>
+                            Students must not make unauthorized photographs,
+                            audio recordings or videos inside the school.
+                        </li>
+
+                        <li>
+                            If a prohibited device is brought to school,
+                            the administration may take disciplinary action
+                            according to school policy.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>3. Weapons & Dangerous Items</h3>
+
+                    <ul>
+
+                        <li>
+                            Weapons and dangerous objects are strictly prohibited
+                            on school premises.
+                        </li>
+
+                        <li>
+                            Students must not bring knives, firearms, explosive
+                            items or any other object intended to cause harm.
+                        </li>
+
+                        <li>
+                            Any serious safety concern should immediately be
+                            reported to a teacher or school administration.
+                        </li>
+
+                        <li>
+                            Possession of a dangerous or prohibited item may result
+                            in serious disciplinary action according to applicable
+                            school rules and safety requirements.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>4. Academic Integrity</h3>
+
+                    <ul>
+
+                        <li>
+                            Students must complete their own academic work.
+                        </li>
+
+                        <li>
+                            Cheating, copying, impersonation or using unauthorized
+                            materials during examinations is not allowed.
+                        </li>
+
+                        <li>
+                            Students should bring the required books, notebooks
+                            and learning materials to class.
+                        </li>
+
+                        <li>
+                            Repeated academic misconduct may result in disciplinary
+                            action according to school policy.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>5. Attendance & Punctuality</h3>
+
+                    <ul>
+
+                        <li>
+                            Students should arrive at school on time.
+                        </li>
+
+                        <li>
+                            Regular attendance is important for academic progress.
+                        </li>
+
+                        <li>
+                            Parents/guardians should inform the school about
+                            legitimate absences according to school procedures.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>6. School Property</h3>
+
+                    <ul>
+
+                        <li>
+                            School furniture, computers, laboratory equipment,
+                            library books and other property must be handled carefully.
+                        </li>
+
+                        <li>
+                            Intentional damage to school property may lead to
+                            disciplinary or recovery action according to school policy.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>7. Disciplinary Action</h3>
+
+                    <p>
+
+                        The school administration may take appropriate
+                        disciplinary action when a student violates school
+                        rules or creates a serious safety, academic or
+                        disciplinary problem. Depending on the nature and
+                        severity of the matter, action may include counselling,
+                        warning, parent/guardian notification, confiscation of
+                        prohibited items, suspension or other measures permitted
+                        under the school's applicable policies.
+
+                        Serious or repeated violations may affect a student's
+                        continuation at the school. Any specific long-term
+                        restriction on study or admission would be determined
+                        by the competent school administration under its
+                        applicable rules and should not be assumed from this
+                        website alone.
+
+                    </p>
+
+                </div>
+
+
+                <div class="rule-box">
+
+                    <h3>8. Student Safety</h3>
+
+                    <p>
+
+                        Students should immediately inform a teacher or
+                        authorized staff member if they notice a dangerous
+                        situation, bullying, harassment, prohibited item or
+                        other serious concern. The purpose of these rules is
+                        to maintain a safe, respectful and productive learning
+                        environment for all students.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FACILITIES -->
+
+    <section id="facilities" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>School Facilities</h2>
+
+                <p>
+                    Educational, academic, transport, sports and student-support facilities
+                </p>
+
+            </div>
+
+
+            <div class="facilities">
+
+
+                <!-- PHOTO 16 -->
+
+                <div class="facility-card">
+
+                    <img src="photo17.jpg" alt="School Transport">
+
+                    <div class="facility-content">
+
+                        <h3>School Transport</h3>
+
+                        <p>
+                            The School has its own pick and drop facility for
+                            students. An incharge in each bus looks after the
+                            children during their journey to and from home and
+                            school. Current transport charges can be enquired
+                            from the school office. Transport fee is payable
+                            for 10 months in a year.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 17 -->
+
+                <div class="facility-card">
+
+                    <img src="photo18.jpg" alt="School Tuckshop">
+
+                    <div class="facility-content">
+
+                        <h3>School Tuckshop</h3>
+
+                        <p>
+                            The School Tuck Shop provides hygienically prepared
+                            eatables to students at reasonable charges. Parents
+                            of Kindercare, Nursery and Prep students are advised
+                            to provide healthy or homemade food to their children
+                            instead of pocket money.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 18 -->
+
+                <div class="facility-card">
+
+                    <img src="photo19.jpg" alt="Library">
+
+                    <div class="facility-content">
+
+                        <h3>Library</h3>
+
+                        <p>
+                            The school library provides students with a calm and
+                            quiet environment in which they can supplement their
+                            knowledge through reading. A collection of books is
+                            available for students and teachers. Newspapers in
+                            English and Urdu, periodicals and magazines can also
+                            be available for reading and educational enrichment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 19 -->
+
+                <div class="facility-card">
+
+                    <img src="photo20.jpg" alt="School Dispensary">
+
+                    <div class="facility-content">
+
+                        <h3>School Dispensary</h3>
+
+                        <p>
+                            The school provides a dispensary facility to support
+                            students' basic medical needs. Qualified medical staff
+                            may assist with children's health requirements and
+                            maintain relevant health records. Periodic medical
+                            check-ups may also be conducted according to the
+                            school's arrangements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 20 -->
+
+                <div class="facility-card">
+
+                    <img src="photo21.jpg" alt="Video Library">
+
+                    <div class="facility-content">
+
+                        <h3>Video Library</h3>
+
+                        <p>
+                            The video library facility is designed to provide
+                            educational and entertaining video content for young
+                            students. Visual learning can help children understand
+                            stories, concepts and general educational topics in
+                            a friendly learning environment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 21 -->
+
+                <div class="facility-card">
+
+                    <img src="photo22.jpg" alt="Computer Laboratory">
+
+                    <div class="facility-content">
+
+                        <h3>Computer Laboratory</h3>
+
+                        <p>
+                            Computer laboratories provide students with opportunities
+                            to develop computer knowledge and practical digital
+                            skills. Qualified instructors can guide students in
+                            learning computer fundamentals and other technology
+                            skills according to educational requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 22 -->
+
+                <div class="facility-card">
+
+                    <img src="Phto26.jpg" alt="Science Laboratories">
+
+                    <div class="facility-content">
+
+                        <h3>Science Laboratories</h3>
+
+                        <p>
+                            Science laboratory facilities support practical learning
+                            in subjects such as Biology, Chemistry and Physics.
+                            Students can perform relevant educational activities
+                            under the supervision and guidance of qualified science
+                            teachers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 23 -->
+
+                <div class="facility-card">
+
+                    <img src="Phy.jpg" alt="Physical Education and Sports">
+
+                    <div class="facility-content">
+
+                        <h3>Physical Education & Sports</h3>
+
+                        <p>
+                            Physical education and sports are an important part of
+                            student development. Participation in games and sports
+                            supports physical fitness, teamwork, discipline and
+                            healthy competition. Different games and sporting
+                            activities may be provided according to the school's
+                            facilities and programme.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 24 -->
+
+                <div class="facility-card">
+
+                    <img src="Aca.jpg" alt="Academics">
+
+                    <div class="facility-content">
+
+                        <h3>Academics</h3>
+
+                        <p>
+                            The school focuses on regular academic work and
+                            assessment to support students' educational progress.
+                            Academic activities may include classroom work,
+                            surprise tests, weekly tests, monthly tests and term
+                            examinations. Co-curricular activities can also support
+                            interaction between teachers and students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 25 -->
+
+                <div class="facility-card">
+
+                    <img src="photo25.jpg" alt="IGCSE GCE O Level">
+
+                    <div class="facility-content">
+
+                        <h3>IGCSE / GCE (O-Level)</h3>
+
+                        <p>
+                            The school provides information and educational pathways
+                            for students interested in international examination
+                            programmes. IGCSE/GCE O-Level is an international
+                            qualification route with subjects such as English,
+                            Urdu, Mathematics, Biology, Physics, Chemistry,
+                            Islamiat and Pakistan Studies, depending on the
+                            programme and applicable arrangements.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="page">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Us</h2>
+
+                <p>
+                    Peshawar Model School - Boys & Girls G.T. Road Campus
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h3>G.T. Road Campus</h3>
+
+                    <p>
+                        0315-3003565-66
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>Address</h3>
+
+                    <p>
+                        G.T. Road, Near Chamkani, Peshawar
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        pmsgtroad@pmei.edu.pk
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>General Email</h3>
+
+                    <p>
+                        info@pmghs.edu.pk
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>Warsak Road</h3>
+
+                    <p>
+                        091-5200782-83
+                    </p>
+
+                    <p>
+                        0320-5200782-83
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>Hayatabad</h3>
+
+                    <p>
+                        091-5705333
+                    </p>
+
+                    <p>
+                        03369123111-222
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h2>Peshawar Model School</h2>
+
+        <p>
+            Boys & Girls - G.T. Road Campus
+        </p>
+
+        <p>
+            G.T. Road, Near Chamkani, Peshawar
+        </p>
+
+        <p>
+            © 2026 Peshawar Model School. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* PAGE NAVIGATION */
+
+        function showPage(pageId) {
+
+            document.querySelectorAll(".page").forEach(function (page) {
+                page.classList.remove("active");
+            });
+
+            const page = document.getElementById(pageId);
+
+            if (page) {
+                page.classList.add("active");
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        /* ADMISSION */
+
+        function submitAdmission(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Admission information has been recorded on this page."
+            );
+        }
+
+
+        /* APPLICANT COUNTS */
+
+        const applicantCounts = {
+
+            "Prep": 32,
+            "1st": 45,
+            "2nd": 38,
+            "3rd": 51,
+            "4th": 47,
+            "5th": 62,
+            "6th": 55,
+            "7th": 49,
+            "8th": 73,
+            "9th": 68,
+            "10th": 41
+
+        };
+
+
+        /* STUDY DATA */
+
+        const studyData = {
+
+            "Prep": {
+                English: [
+                    "Alphabet",
+                    "Basic vocabulary",
+                    "Reading simple words",
+                    "Basic sentence formation"
+                ],
+                Urdu: [
+                    "حروف تہجی",
+                    "بنیادی الفاظ",
+                    "آسان جملے",
+                    "آسان عبارت"
+                ],
+                Mathematics: [
+                    "Counting",
+                    "Addition",
+                    "Subtraction",
+                    "Basic shapes",
+                    "Numbers"
+                ]
+            },
+
+            "1st": {
+                English: [
+                    "Reading",
+                    "Basic grammar",
+                    "Nouns",
+                    "Simple sentences",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "اسم",
+                    "الفاظ",
+                    "جملے",
+                    "مختصر عبارت"
+                ],
+                Mathematics: [
+                    "Addition",
+                    "Subtraction",
+                    "Multiplication basics",
+                    "Numbers",
+                    "Simple word problems"
+                ]
+            },
+
+            "2nd": {
+                English: [
+                    "Grammar",
+                    "Nouns and verbs",
+                    "Paragraph writing",
+                    "Comprehension",
+                    "Vocabulary"
+                ],
+                Urdu: [
+                    "قواعد",
+                    "اسم اور فعل",
+                    "مختصر مضمون",
+                    "کہانی",
+                    "عبارت"
+                ],
+                Mathematics: [
+                    "Addition",
+                    "Subtraction",
+                    "Multiplication",
+                    "Division",
+                    "Word problems"
+                ]
+            },
+
+            "3rd": {
+                English: [
+                    "Grammar",
+                    "Tenses basics",
+                    "Paragraph writing",
+                    "Story writing",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "قواعد",
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "عبارت"
+                ],
+                Mathematics: [
+                    "Multiplication",
+                    "Division",
+                    "Fractions",
+                    "Word problems",
+                    "Basic geometry"
+                ]
+            },
+
+            "4th": {
+                English: [
+                    "Grammar",
+                    "Tenses",
+                    "Essay writing",
+                    "Story writing",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "قواعد",
+                    "عبارت"
+                ],
+                Mathematics: [
+                    "Fractions",
+                    "Decimals",
+                    "Long multiplication",
+                    "Long division",
+                    "Geometry"
+                ],
+                Science: [
+                    "Plants",
+                    "Animals",
+                    "Human body",
+                    "Matter",
+                    "Environment"
+                ]
+            },
+
+            "5th": {
+                English: [
+                    "Grammar",
+                    "Tenses",
+                    "Formal writing",
+                    "Essay",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "قواعد",
+                    "عبارت فہمی"
+                ],
+                Mathematics: [
+                    "Fractions",
+                    "Decimals",
+                    "Percentages",
+                    "Geometry",
+                    "Word problems"
+                ],
+                Science: [
+                    "Human body",
+                    "Plants",
+                    "Energy",
+                    "Matter",
+                    "Environment"
+                ]
+            },
+
+            "6th": {
+                English: [
+                    "Grammar",
+                    "Tenses",
+                    "Essay writing",
+                    "Story writing",
+                    "Formal writing",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "قواعد",
+                    "عبارت"
+                ],
+                Mathematics: [
+                    "Integers",
+                    "Fractions",
+                    "Decimals",
+                    "Percentages",
+                    "Algebra basics",
+                    "Geometry"
+                ],
+                Science: [
+                    "Cells",
+                    "Human body",
+                    "Matter",
+                    "Energy",
+                    "Environment"
+                ]
+            },
+
+            "7th": {
+                English: [
+                    "Advanced grammar",
+                    "Tenses",
+                    "Essay",
+                    "Story",
+                    "Formal letter",
+                    "Comprehension"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "خط",
+                    "قواعد",
+                    "عبارت"
+                ],
+                Mathematics: [
+                    "Integers",
+                    "Fractions",
+                    "Decimals",
+                    "Ratio",
+                    "Percentage",
+                    "Algebra",
+                    "Geometry"
+                ],
+                Science: [
+                    "Cells",
+                    "Human body",
+                    "Force",
+                    "Energy",
+                    "Matter",
+                    "Environment"
+                ]
+            },
+
+            "8th": {
+                English: [
+                    "Advanced grammar",
+                    "Essay writing",
+                    "Story writing",
+                    "Formal writing",
+                    "Comprehension",
+                    "Vocabulary",
+                    "Sentence transformation"
+                ],
+                Urdu: [
+                    "مضمون نویسی",
+                    "کہانی",
+                    "درخواست",
+                    "خط نویسی",
+                    "قواعد",
+                    "عبارت فہمی"
+                ],
+                Mathematics: [
+                    "Algebra",
+                    "Linear equations",
+                    "Fractions",
+                    "Percentages",
+                    "Ratio",
+                    "Geometry",
+                    "Word problems",
+                    "Advanced calculations"
+                ],
+                Science: [
+                    "Cells",
+                    "Human body",
+                    "Force and motion",
+                    "Energy",
+                    "Matter",
+                    "Environment"
+                ],
+                Computer: [
+                    "Computer fundamentals",
+                    "Hardware and software",
+                    "Operating systems",
+                    "Internet basics",
+                    "Programming fundamentals"
+                ]
+            },
+
+            "9th": {
+                English: [
+                    "Advanced grammar",
+                    "Essay writing",
+                    "Story writing",
+                    "Formal letter",
+                    "Comprehension",
+                    "Vocabulary",
+                    "Sentence correction"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "خط",
+                    "قواعد",
+                    "عبارت فہمی"
+                ],
+                Mathematics: [
+                    "Algebra",
+                    "Equations",
+                    "Geometry",
+                    "Trigonometry basics",
+                    "Percentages",
+                    "Word problems",
+                    "Advanced calculations"
+                ],
+                Physics: [
+                    "Motion",
+                    "Force",
+                    "Work and energy",
+                    "Measurements",
+                    "Physical quantities"
+                ],
+                Chemistry: [
+                    "Matter",
+                    "Atoms",
+                    "Elements",
+                    "Compounds",
+                    "Chemical reactions"
+                ]
+            },
+
+            "10th": {
+                English: [
+                    "Advanced grammar",
+                    "Essay",
+                    "Story",
+                    "Formal writing",
+                    "Comprehension",
+                    "Vocabulary",
+                    "Advanced sentence structure"
+                ],
+                Urdu: [
+                    "مضمون",
+                    "کہانی",
+                    "درخواست",
+                    "خط",
+                    "قواعد",
+                    "عبارت فہمی"
+                ],
+                Mathematics: [
+                    "Algebra",
+                    "Equations",
+                    "Geometry",
+                    "Trigonometry",
+                    "Percentages",
+                    "Advanced word problems",
+                    "Complex calculations"
+                ],
+                Physics: [
+                    "Motion",
+                    "Force",
+                    "Energy",
+                    "Electricity",
+                    "Measurements"
+                ],
+                Chemistry: [
+                    "Atoms",
+                    "Elements",
+                    "Compounds",
+                    "Chemical reactions",
+                    "Chemical equations"
+                ],
+                Computer: [
+                    "Computer fundamentals",
+                    "Programming",
+                    "Algorithms",
+                    "Internet",
+                    "Database basics"
+                ]
+            }
+
+        };
+
+
+        /* CLASS CARDS */
+
+        const classGrid = document.getElementById("classGrid");
+
+        Object.keys(studyData).forEach(function (className) {
+
+            const card = document.createElement("div");
+
+            card.className = "class-card";
+
+            card.innerHTML = `
+
+<h3>${className}</h3>
+
+<p class="applicants">
+Applicants: ${applicantCounts[className]}
+</p>
+
+<p>
+Prepare for Admission Test
+</p>
+
+<button class="btn"
+onclick="openStudyDetails('${className}')">
+View Preparation
+</button>
+
+`;
+
+            classGrid.appendChild(card);
+
+        });
+
+
+        let selectedClass = "";
+
+
+        function openStudyDetails(className) {
+
+            selectedClass = className;
+
+            document.getElementById("studyClassTitle")
+                .textContent =
+                className + " Admission Test Preparation";
+
+            document.getElementById("studyApplicantText")
+                .textContent =
+                "Current demo applicant count: " +
+                applicantCounts[className];
+
+            const subjectGrid =
+                document.getElementById("subjectGrid");
+
+            subjectGrid.innerHTML = "";
+
+            const subjects = studyData[className];
+
+            Object.keys(subjects).forEach(function (subject) {
+
+                const card = document.createElement("div");
+
+                card.className = "subject-card";
+
+                let list = "";
+
+                subjects[subject].forEach(function (topic) {
+
+                    list += `<li>${topic}</li>`;
+
+                });
+
+                card.innerHTML = `
+
+<h3>${subject}</h3>
+
+<ul>
+${list}
+</ul>
+
+`;
+
+                subjectGrid.appendChild(card);
+
+            });
+
+            showPage("studyDetails");
+
+        }
+
+
+        function startSelectedTest() {
+
+            if (!selectedClass) {
+
+                alert("Please select a class first.");
+
+                return;
+
+            }
+
+            document.getElementById("testClass")
+                .value = selectedClass;
+
+            document.getElementById("studentInfoBox")
+                .style.display = "block";
+
+            document.getElementById("testArea")
+                .style.display = "none";
+
+            document.getElementById("resultBox")
+                .style.display = "none";
+
+            showPage("test");
+
+        }
+
+
+        const testQuestions = {
+
+            "Prep": [
+                {
+                    subject: "English",
+                    question: "Write five English words and use two of them in simple sentences.",
+                    marks: 10
+                },
+                {
+                    subject: "Urdu",
+                    question: "پانچ آسان الفاظ لکھیں اور ان میں سے دو الفاظ کو جملوں میں استعمال کریں۔",
+                    marks: 10
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve: 25 + 18 = ?   50 - 23 = ?   6 × 4 = ?",
+                    marks: 10
+                }
+            ],
+
+            "1st": [
+                {
+                    subject: "English",
+                    question: "Write a short paragraph about My School.",
+                    marks: 10
+                },
+                {
+                    subject: "Urdu",
+                    question: "میرے اسکول کے بارے میں مختصر مضمون لکھیں۔",
+                    marks: 10
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve the given addition, subtraction and multiplication questions.",
+                    marks: 10
+                }
+            ],
+
+            "2nd": [
+                {
+                    subject: "English",
+                    question: "Write a short story using simple English sentences.",
+                    marks: 10
+                },
+                {
+                    subject: "Urdu",
+                    question: "ایک مختصر کہانی لکھیں۔",
+                    marks: 10
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve multiplication, division and word problems.",
+                    marks: 15
+                }
+            ],
+
+            "3rd": [
+                {
+                    subject: "English",
+                    question: "Write an essay on My School and answer a short comprehension passage.",
+                    marks: 15
+                },
+                {
+                    subject: "Urdu",
+                    question: "اسکول کے بارے میں مضمون لکھیں اور دی گئی عبارت کے سوالات حل کریں۔",
+                    marks: 15
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve multiplication, division, fractions and word problems.",
+                    marks: 20
+                }
+            ],
+
+            "4th": [
+                {
+                    subject: "English",
+                    question: "Write an essay and solve grammar questions including tenses and nouns.",
+                    marks: 20
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، درخواست اور قواعد کے سوالات حل کریں۔",
+                    marks: 20
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve fractions, decimals, long multiplication and long division.",
+                    marks: 25
+                },
+                {
+                    subject: "Science",
+                    question: "Answer questions about plants, animals, matter and the human body.",
+                    marks: 15
+                }
+            ],
+
+            "5th": [
+                {
+                    subject: "English",
+                    question: "Write an essay, formal letter and solve grammar questions.",
+                    marks: 20
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، کہانی، درخواست اور قواعد کے سوالات حل کریں۔",
+                    marks: 20
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve fractions, decimals, percentages and geometry problems.",
+                    marks: 25
+                },
+                {
+                    subject: "Science",
+                    question: "Answer questions about energy, matter, plants and the human body.",
+                    marks: 15
+                }
+            ],
+
+            "6th": [
+                {
+                    subject: "English",
+                    question: "Write an essay and formal writing. Solve grammar and comprehension questions.",
+                    marks: 20
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، کہانی، درخواست اور عبارت فہمی حل کریں۔",
+                    marks: 20
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve integers, fractions, decimals, percentages, algebra and geometry.",
+                    marks: 30
+                },
+                {
+                    subject: "Science",
+                    question: "Answer questions about cells, matter, energy and the human body.",
+                    marks: 20
+                }
+            ],
+
+            "7th": [
+                {
+                    subject: "English",
+                    question: "Write an essay, story and formal letter. Solve grammar and comprehension.",
+                    marks: 25
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، کہانی، درخواست، خط اور قواعد کے سوالات حل کریں۔",
+                    marks: 25
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve algebra, fractions, ratio, percentage and geometry problems.",
+                    marks: 30
+                },
+                {
+                    subject: "Science",
+                    question: "Answer questions about force, energy, cells, matter and environment.",
+                    marks: 20
+                }
+            ],
+
+            "8th": [
+                {
+                    subject: "English",
+                    question: "Write an essay, story and formal letter. Solve advanced grammar and comprehension questions.",
+                    marks: 25
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون نویسی، کہانی، درخواست، خط نویسی، قواعد اور عبارت فہمی حل کریں۔",
+                    marks: 25
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve algebra, linear equations, percentages, ratio, geometry and advanced calculations.",
+                    marks: 30
+                },
+                {
+                    subject: "Science",
+                    question: "Answer questions about cells, force, motion, energy, matter and environment.",
+                    marks: 20
+                },
+                {
+                    subject: "Computer",
+                    question: "Answer questions about computer fundamentals, hardware, software, internet and programming basics.",
+                    marks: 20
+                }
+            ],
+
+            "9th": [
+                {
+                    subject: "English",
+                    question: "Write an essay and formal letter. Solve advanced grammar, sentence correction and comprehension.",
+                    marks: 25
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، کہانی، درخواست، خط، قواعد اور عبارت فہمی حل کریں۔",
+                    marks: 25
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve algebra, equations, geometry, percentages, trigonometry basics and advanced calculations.",
+                    marks: 30
+                },
+                {
+                    subject: "Physics",
+                    question: "Solve written questions related to motion, force, work, energy and measurements.",
+                    marks: 20
+                },
+                {
+                    subject: "Chemistry",
+                    question: "Answer questions about atoms, elements, compounds, matter and chemical reactions.",
+                    marks: 20
+                }
+            ],
+
+            "10th": [
+                {
+                    subject: "English",
+                    question: "Write an advanced essay and formal writing. Solve grammar, comprehension and sentence structure.",
+                    marks: 25
+                },
+                {
+                    subject: "Urdu",
+                    question: "مضمون، کہانی، درخواست، خط، قواعد اور عبارت فہمی حل کریں۔",
+                    marks: 25
+                },
+                {
+                    subject: "Mathematics",
+                    question: "Solve algebra, equations, geometry, trigonometry and advanced word problems.",
+                    marks: 30
+                },
+                {
+                    subject: "Physics",
+                    question: "Solve written questions about motion, force, energy, electricity and measurements.",
+                    marks: 20
+                },
+                {
+                    subject: "Chemistry",
+                    question: "Answer questions about atoms, elements, compounds, reactions and chemical equations.",
+                    marks: 20
+                },
+                {
+                    subject: "Computer",
+                    question: "Answer questions about programming, algorithms, databases, internet and computer fundamentals.",
+                    marks: 20
+                }
+            ]
+
+        };
+
+
+        function beginTest() {
+
+            const name =
+                document.getElementById("studentName").value.trim();
+
+            const father =
+                document.getElementById("fatherName").value.trim();
+
+            if (!name || !father) {
+
+                alert(
+                    "Please enter Student Name and Father / Guardian Name."
+                );
+
+                return;
+
+            }
+
+            if (!selectedClass) {
+
+                selectedClass =
+                    document.getElementById("testClass").value;
+
+            }
+
+            document.getElementById("studentInfoBox")
+                .style.display = "none";
+
+            document.getElementById("testArea")
+                .style.display = "block";
+
+            document.getElementById("resultBox")
+                .style.display = "none";
+
+            document.getElementById("examTitle")
+                .textContent =
+                selectedClass + " Admission Test";
+
+            const container =
+                document.getElementById("questionsContainer");
+
+            container.innerHTML = "";
+
+            testQuestions[selectedClass].forEach(function (q, index) {
+
+                const question = document.createElement("div");
+
+                question.className = "question";
+
+                const answerClass =
+                    q.subject === "Mathematics"
+                        ? "math-answer"
+                        : "";
+
+                question.innerHTML = `
+
+<div class="question-title">
+Question ${index + 1} — ${q.subject}
+</div>
+
+<div class="max-marks">
+Maximum Marks: ${q.marks}
+</div>
+
+<p>${q.question}</p>
+
+<br>
+
+<label>Student Answer</label>
+
+<textarea
+class="${answerClass}"
+placeholder="Write student's answer here..."
+></textarea>
+
+<label>Marks Obtained</label>
+
+<input
+type="number"
+class="marks-input obtained-mark"
+min="0"
+max="${q.marks}"
+value="0"
+data-max="${q.marks}"
+data-subject="${q.subject}"
+>
+
+`;
+
+                container.appendChild(question);
+
+            });
+
+        }
+
+
+        function calculateResult() {
+
+            const marksInputs =
+                document.querySelectorAll(".obtained-mark");
+
+            let subjectTotals = {};
+
+            let totalMax = 0;
+
+            let totalObtained = 0;
+
+            marksInputs.forEach(function (input) {
+
+                let max = Number(input.dataset.max);
+
+                let obtained = Number(input.value);
+
+                if (obtained < 0)
+                    obtained = 0;
+
+                if (obtained > max) {
+
+                    obtained = max;
+                    input.value = max;
+
+                }
+
+                const subject =
+                    input.dataset.subject;
+
+                if (!subjectTotals[subject]) {
+
+                    subjectTotals[subject] = {
+                        obtained: 0,
+                        max: 0
+                    };
+
+                }
+
+                subjectTotals[subject].obtained += obtained;
+
+                subjectTotals[subject].max += max;
+
+                totalObtained += obtained;
+
+                totalMax += max;
+
+            });
+
+            let percentage = 0;
+
+            if (totalMax > 0) {
+
+                percentage =
+                    (totalObtained / totalMax) * 100;
+
+            }
+
+            document.getElementById("resultStudentInfo")
+                .innerHTML = `
+
+<p>
+<strong>Student:</strong>
+${escapeHTML(
+                    document.getElementById("studentName").value
+                )}
+</p>
+
+<p>
+<strong>Father / Guardian:</strong>
+${escapeHTML(
+                    document.getElementById("fatherName").value
+                )}
+</p>
+
+<p>
+<strong>Class:</strong>
+${selectedClass}
+</p>
+
+<p>
+<strong>WhatsApp:</strong>
+${escapeHTML(
+                    document.getElementById("whatsappNumber").value
+                )}
+</p>
+
+`;
+
+            let table = `
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Obtained Marks</th>
+<th>Maximum Marks</th>
+</tr>
+
+`;
+
+            Object.keys(subjectTotals).forEach(function (subject) {
+
+                table += `
+
+<tr>
+
+<td>${subject}</td>
+
+<td>
+${subjectTotals[subject].obtained}
+</td>
+
+<td>
+${subjectTotals[subject].max}
+</td>
+
+</tr>
+
+`;
+
+            });
+
+            table += `</table>`;
+
+            document.getElementById("resultTable")
+                .innerHTML = table;
+
+            document.getElementById("resultSummary")
+                .innerHTML = `
+
+Total Marks:
+${totalObtained} / ${totalMax}
+
+<br>
+
+Percentage:
+${percentage.toFixed(2)}%
+
+`;
+
+            document.getElementById("resultBox")
+                .style.display = "block";
+
+        }
+
+
+        function escapeHTML(text) {
+
+            return String(text)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
